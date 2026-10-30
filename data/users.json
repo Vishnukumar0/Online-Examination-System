@@ -1,0 +1,156 @@
+[
+  {
+    "id": "db23ab19-d1ea-417d-b24e-e501898bc9ad",
+    "name": "Admin User",
+    "email": "admin@quiz.com",
+    "password": "$2a$10$.qfA9zIKNzz0uWds7y/ORewmgwuGfl1KuBJxaCCLqrIfuVAgeae9.",
+    "role": "admin",
+    "createdAt": "2026-10-07T08:50:49.345Z",
+    "avatar": "A",
+    "xp": 375,
+    "level": "Apprentice",
+    "badges": [
+      "first_quiz",
+      "perfect_score",
+      "speed_demon"
+    ],
+    "streak": 1
+  },
+  {
+    "id": "a3d2693c-ac8a-4f2b-ac0a-7c3c775180d2",
+    "name": "John Student",
+    "email": "student@quiz.com",
+    "password": "$2a$10$qrWYgMLBkeZqXJI8T56PYOUJH20yb9eHpAv17wXnl4FGRTQDmn1uW",
+    "role": "student",
+    "createdAt": "2026-10-07T08:50:49.345Z",
+    "avatar": "J",
+    "xp": 1575,
+    "level": "Master",
+    "badges": [
+      "first_quiz",
+      "perfect_score",
+      "speed_demon"
+    ],
+    "streak": 7
+  },
+  {
+    "id": "a3f6816b-dd6a-4990-95ae-94f106fb7f93",
+    "name": "Rohit Sharma",
+    "email": "rohitsharma792.rs@gmail.com",
+    "password": "$2a$10$TEnh4I9N/4/922PfAkNeGuqc9x2rkdKs0PTYSOn0pY9P6t4eesmC.",
+    "role": "student",
+    "avatar": "R",
+    "createdAt": "2026-10-07T09:01:53.616Z"
+  },
+  {
+    "id": "4c7a1aa1-8e1f-4c37-97b3-c4219fbccfa7",
+    "name": "Sumit Kumar",
+    "email": "sumitgzp616@gmail.com",
+    "password": "$2a$10$utUjly/iDTgZkei3MuuZfulrAz7NXAdUqL51jq.eipIyK7PiZMleG",
+    "role": "student",
+    "avatar": "S",
+    "createdAt": "2026-10-08T08:45:47.725Z",
+    "xp": 375,
+    "level": "Apprentice",
+    "badges": [
+      "first_quiz",
+      "perfect_score",
+      "speed_demon"
+    ],
+    "streak": 1
+  },
+  {
+    "id": "784d4c45-f531-4187-9aef-e3f34292988d",
+    "name": "Rohit Sharma",
+    "email": "rohit_1791449525624@quiz.com",
+    "password": "$2a$10$yd6R6kse/drtvmiJlLTGP.D5Fhe6WCJbjWtmk5SfWyR3OQcEGALZm",
+    "role": "student",
+    "avatar": "R",
+    "createdAt": "2026-10-08T08:52:05.790Z",
+    "xp": 375,
+    "level": "Apprentice",
+    "badges": [
+      "first_quiz",
+      "perfect_score",
+      "speed_demon"
+    ],
+    "streak": 1
+  },
+  {
+    "id": "b466f7b3-2c2f-4b2e-9a63-f12c4622c5d2",
+    "name": "Rohit Sharma",
+    "email": "rohit_test_1791449714076@quiz.com",
+    "password": "$2a$10$wvtBaWThntcMTlRDbU0qaOz5RiMHcnCUkEgzg4cuvSQt3Xe.LaLyC",
+    "role": "student",
+    "avatar": "R",
+    "createdAt": "2026-10-08T08:55:14.278Z",
+    "xp": 375,
+    "level": "Apprentice",
+    "badges": [
+      "first_quiz",
+      "perfect_score",
+      "speed_demon"
+    ],
+    "streak": 1
+  },
+  {
+    "id": "359b9ed9-bc15-456d-9087-a757ccc5a663",
+    "name": "Rohit Kumar Kushwaha",
+    "email": "rohitkushwaha@gmail.com",
+    "password": "$2a$10$DNQdYTvlETZhE58IBf8tGu3mnK1U/WRpmp2Hbj02NGBey2IkNQM9a",
+    "role": "student",
+    "avatar": "R",
+    "createdAt": "2026-10-08T10:11:51.643Z",
+    "xp": 425,
+    "level": "Apprentice",
+    "badges": [
+      "first_quiz",
+      "perfect_score",
+      "speed_demon"
+    ],
+    "streak": 3
+  },
+  {
+    "id": "2ce105b6-c52a-44b4-bb7c-d2614d528199",
+    "name": "Anand Mohan",
+    "email": "mr.anandp040@gmail.com",
+    "password": "$2a$10$Ut9u122O3cipuSY2RhrKC.VVSN2.n6tkXd57IhDDmZ0jwUD/U3vGS",
+    "role": "student",
+    "avatar": "A",
+    "createdAt": "2026-10-09T16:15:07.203Z",
+    "xp": 400,
+    "level": "Apprentice",
+    "badges": [
+      "first_quiz",
+      "perfect_score",
+      "speed_demon"
+    ],
+    "streak": 2
+  },
+  {
+    "id": "1bf0f2da-94a3-4ef8-9e84-ec459ba643c9",
+    "name": "Rohit",
+    "email": "royalb.challenege@gmail.com",
+    "password": "$2a$10$4t.wKprx8Wd21.zmb9fl3ud3dhbJcxYiKXj3c28iHLRrj63Nomx9W",
+    "role": "student",
+    "avatar": "R",
+    "createdAt": "2026-10-28T04:24:49.384Z"
+  },
+  {
+    "id": "ef835ec0-28ba-4b45-b49b-6fd3a5545256",
+    "name": "Vishnu",
+    "email": "vishnu@gmail.com",
+    "password": "$2a$10$kSLXAWfufGAhQAFzsMU6CORWHhncuv6HDXlSR.ixWtKQf92YlCwhO",
+    "role": "student",
+    "avatar": "V",
+    "createdAt": "2026-10-28T04:49:36.834Z",
+    "xp": 400,
+    "level": "Apprentice",
+    "badges": [
+      "first_quiz",
+      "perfect_score",
+      "speed_demon"
+    ],
+    "streak": 2
+  }
+]

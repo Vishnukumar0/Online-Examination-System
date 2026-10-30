@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuizMaster Pro — Next-Gen Examination & Assessment Platform</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#6366f1" />
+</head>
+<body>
+
+<!-- Background Ambient Lighting Mesh -->
+<div class="ambient-glow glow-1"></div>
+<div class="ambient-glow glow-2"></div>
+
+<!-- ═══════════════════════════════════════════
+     AUTH SCREENS (shown when not logged in)
+════════════════════════════════════════════ -->
+<div id="auth-screen" class="auth-screen">
+  <div class="auth-header-controls">
+    <button class="icon-toggle-btn" id="theme-toggle-auth" title="Toggle Theme">
+      <span class="theme-icon">☀️</span>
+    </button>
+  </div>
+
+  <div class="auth-brand">
+    <div class="brand-mark">
+      <span class="brand-sparkle">✦</span> Q
+    </div>
+    <div class="brand-info">
+      <span class="brand-name">QuizMaster <span class="badge-pro">PRO</span></span>
+      <span class="brand-tagline">Advanced Academic & Assessment Suite</span>
+    </div>
+  </div>
+
+  <!-- Login Form -->
+  <div id="login-panel" class="auth-card active">
+    <div class="auth-card-top">
+      <h1 class="auth-title">Welcome Back</h1>
+      <p class="auth-sub">Enter your credentials to access your assessment portal.</p>
+    </div>
+    <form id="login-form" class="auth-form" novalidate>
+      <div class="field">
+        <label for="login-email">Email Address</label>
+        <div class="input-with-icon">
+          <span class="input-icon">✉️</span>
+          <input type="email" id="login-email" placeholder="you@university.edu" autocomplete="email" required />
+        </div>
+      </div>
+      <div class="field">
+        <label for="login-password">Password</label>
+        <div class="input-with-icon">
+          <span class="input-icon">🔒</span>
+          <input type="password" id="login-password" placeholder="••••••••" autocomplete="current-password" required />
+        </div>
+      </div>
+      <div id="login-error" class="form-error hidden"></div>
+      <button type="submit" class="btn btn-primary btn-full btn-glow" id="login-btn">
+        <span>Sign In to Dashboard</span> →
+      </button>
+    </form>
+
+    <div class="auth-divider"><span>OR ONE-CLICK DEMO</span></div>
+
+    <div class="demo-chip-group">
+      <button class="demo-chip" onclick="fillDemo('admin@quiz.com','admin123')">
+        <span class="chip-role chip-admin">Admin</span>
+        <span class="chip-email">admin@quiz.com</span>
+      </button>
+      <button class="demo-chip" onclick="fillDemo('student@quiz.com','student123')">
+        <span class="chip-role chip-student">Student</span>
+        <span class="chip-email">student@quiz.com</span>
+      </button>
+    </div>
+
+    <p class="auth-switch">
+      Don't have an account? <button class="link-btn" onclick="showRegister()">Create Student Account</button>
+    </p>
+  </div>
+
+  <!-- Register Form -->
+  <div id="register-panel" class="auth-card">
+    <div class="auth-card-top">
+      <h1 class="auth-title">Create Account</h1>
+      <p class="auth-sub">Join thousands of students and track your academic mastery.</p>
+    </div>
+    <form id="register-form" class="auth-form" novalidate>
+      <div class="field">
+        <label for="reg-name">Full Name</label>
+        <div class="input-with-icon">
+          <span class="input-icon">👤</span>
+          <input type="text" id="reg-name" placeholder="Sarah Chen" autocomplete="name" required />
+        </div>
+      </div>
+      <div class="field">
+        <label for="reg-email">Email Address</label>
+        <div class="input-with-icon">
+          <span class="input-icon">✉️</span>
+          <input type="email" id="reg-email" placeholder="you@university.edu" autocomplete="email" required />
+        </div>
+      </div>
+      <div class="field">
+        <label for="reg-password">Security Password</label>
+        <div class="input-with-icon">
+          <span class="input-icon">🔒</span>
+          <input type="password" id="reg-password" placeholder="At least 6 characters" autocomplete="new-password" required />
+        </div>
+      </div>
+      <div id="register-error" class="form-error hidden"></div>
+      <button type="submit" class="btn btn-primary btn-full btn-glow" id="register-btn">
+        <span>Complete Registration</span> →
+      </button>
+    </form>
+    <p class="auth-switch">
+      Already have an account? <button class="link-btn" onclick="showLogin()">Sign In</button>
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     MAIN APPLICATION SHELL (logged in)
+════════════════════════════════════════════ -->
+<div id="app" class="app-layout hidden">
+
+  <!-- Desktop & Tablet Sidebar -->
+  <aside class="app-sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <div class="sidebar-brand">
+        <div class="brand-mark sm">Q</div>
+        <div class="brand-info">
+          <span class="brand-name">QuizMaster</span>
+          <span class="brand-badge" id="user-role-badge">Student</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Stats Bar in Sidebar -->
+    <div class="sidebar-stats-pill" id="sidebar-stats-pill">
+      <div class="stat-pill-item" title="Current Level">
+        <span class="stat-pill-icon">👑</span>
+        <span class="stat-pill-val" id="sidebar-level">Scholar</span>
+      </div>
+      <div class="stat-pill-divider"></div>
+      <div class="stat-pill-item" title="Total XP">
+        <span class="stat-pill-icon">⚡</span>
+        <span class="stat-pill-val" id="sidebar-xp">1,350 XP</span>
+      </div>
+      <div class="stat-pill-divider"></div>
+      <div class="stat-pill-item" title="Day Streak">
+        <span class="stat-pill-icon">🔥</span>
+        <span class="stat-pill-val" id="sidebar-streak">5</span>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sidebar-nav" id="sidebar-nav"></nav>
+
+    <!-- Sidebar Bottom / User Panel -->
+    <div class="sidebar-footer">
+      <div class="sidebar-controls-row">
+        <button class="footer-action-btn" id="theme-toggle-btn" title="Toggle Theme">
+          <span id="theme-btn-icon">☀️</span> <span class="footer-btn-label">Theme</span>
+        </button>
+        <button class="footer-action-btn" id="sound-toggle-btn" title="Toggle Audio FX">
+          <span id="sound-btn-icon">🔊</span> <span class="footer-btn-label">Sound</span>
+        </button>
+      </div>
+
+      <div class="user-card-compact" onclick="navigate('profile')">
+        <div class="avatar" id="sidebar-avatar">S</div>
+        <div class="user-card-details">
+          <div class="user-card-name" id="sidebar-user-name">Sarah Chen</div>
+          <div class="user-card-role" id="sidebar-user-role">Student</div>
+        </div>
+        <button class="user-logout-icon" onclick="event.stopPropagation();logout()" title="Sign Out">
+          ⎋
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Mobile Top Bar -->
+  <header class="mobile-navbar">
+    <button class="hamburger-btn" id="menu-toggle" aria-label="Toggle Navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="mobile-brand">
+      <div class="brand-mark xs">Q</div>
+      <span class="brand-name">QuizMaster</span>
+    </div>
+    <div class="mobile-actions">
+      <button class="icon-toggle-btn sm" id="theme-toggle-mobile">☀️</button>
+    </div>
+  </header>
+  <div class="sidebar-backdrop" id="sidebar-overlay"></div>
+
+  <!-- Dynamic Main Content -->
+  <main class="app-main" id="main-content">
+    <!-- View views/ are injected here -->
+  </main>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     UTILITY MODALS & FLOATING DIALOGS
+════════════════════════════════════════════ -->
+<div id="modal-overlay" class="modal-backdrop hidden" role="dialog" aria-modal="true">
+  <div class="modal-box" id="modal">
+    <button class="modal-close-btn" id="modal-close" aria-label="Close modal">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<!-- Floating Scratchpad / Notes Drawer -->
+<div id="scratchpad-drawer" class="floating-drawer hidden">
+  <div class="drawer-header">
+    <span class="drawer-title">📝 Quick Scratchpad / Rough Work</span>
+    <button class="drawer-close-btn" onclick="toggleScratchpad()">✕</button>
+  </div>
+  <textarea id="scratchpad-text" class="drawer-textarea" placeholder="Type notes, formulas or draft calculations here..."></textarea>
+</div>
+
+<!-- Floating Quick AI Academic Coach Button -->
+<button class="floating-ai-btn" id="floating-ai-tutor-btn" onclick="AITutor.openTutor()" title="Ask AI Academic Coach">
+  <span style="font-size:1.4rem">🤖</span>
+  <span class="floating-ai-label">AI Tutor</span>
+</button>
+
+<!-- Toast Container -->
+<div id="toast-container" class="toast-stack" aria-live="polite"></div>
+
+<!-- Scripts -->
+<script src="/js/utils/audio.js"></script>
+<script src="/js/utils/confetti.js"></script>
+<script src="/js/utils/certificate.js"></script>
+<script src="/js/utils/charts.js"></script>
+<script src="/js/utils/voice.js"></script>
+<script src="/js/utils/calculator.js"></script>
+<script src="/js/utils/ai-tutor.js"></script>
+<script src="/js/utils/exam-exporter.js"></script>
+<script src="/js/utils/offline.js"></script>
+<script src="/js/utils/anti-cheat.js"></script>
+<script src="/js/utils/adaptive.js"></script>
+<script src="/js/api.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/views/dashboard.js"></script>
+<script src="/js/views/quizzes.js"></script>
+<script src="/js/views/quiz-take.js"></script>
+<script src="/js/views/results.js"></script>
+<script src="/js/views/leaderboard.js"></script>
+<script src="/js/views/duel.js"></script>
+<script src="/js/views/live-room.js"></script>
+<script src="/js/views/admin-quizzes.js"></script>
+<script src="/js/views/admin-users.js"></script>
+<script src="/js/views/profile.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>
